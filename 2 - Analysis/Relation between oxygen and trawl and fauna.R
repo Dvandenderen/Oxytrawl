@@ -129,7 +129,8 @@
   m2 <- vglm(BC_abu ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
   m3 <- vglm(BC_abu ~ oxygen*SAR_1317, tobit(Lower = 0), data = Env)
   AIC(m1);AIC(m2);AIC(m3)
-  summary(m1, lrt0 = TRUE);summary(m2, lrt0 = TRUE);summary(m3, lrt0 = TRUE)
+  summary(m1);summary(m2);summary(m3)
+  summary(m1, lrt0 = TRUE);summary(m2, lrt0 = TRUE);summary(m3, lrt0 = TRUE) # pvalues based on likelihood ratio test
 
   oxygen <- rep(seq(0,6,0.01),2)
   nb <- length(oxygen)/2
@@ -153,7 +154,8 @@
   m2 <- vglm(log10(Env$Dr_abu+1) ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
   m3 <- vglm(log10(Env$Dr_abu+1) ~ oxygen*SAR_1317, tobit(Lower = 0), data = Env)
   AIC(m1);AIC(m2);AIC(m3)
-  summary(m1, lrt0 = TRUE);summary(m2, lrt0 = TRUE);summary(m3, lrt0 = TRUE)
+  summary(m1);summary(m2);summary(m3)
+  summary(m1, lrt0 = TRUE);summary(m2, lrt0 = TRUE);summary(m3, lrt0 = TRUE) # pvalues based on likelihood ratio test
   
   oxygen <- rep(seq(0,6,0.01),2)
   nb <- length(oxygen)/2
