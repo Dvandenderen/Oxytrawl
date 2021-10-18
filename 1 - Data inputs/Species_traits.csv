@@ -1,0 +1,37 @@
+Species;Name_used_for_longevity;Reference_longevity;Comment.longevity;l.1;l1.2;l3.10;l.10;Name_used_for_feeding;Reference_feeding;Comment_feeding;fSuspension;Name_used_for_bioturbation;Reference_bioturbation;Comment_bioturbation;bDiffusive;bUpward_conveyor;bDownward_onveyer;Name_used_for_vertical_position;Reference_vertical_position;spSurface;spInfauna0.5;spInfauna6.10;spInfauna.10
+Ampharete lindstroemi;Ampharete.sp.;C.Garcia 2010;Based on A. balthica, A. acutifrons;0;1;0;0;Ampharete.sp.;Bolam et al. 2014;;0.333333333;Ampharete.sp.;Bolam et al. 2014;;0;0;0;Ampharete;Bolam et al. 2014;0;1;0;0
+Ampharete sp. ;Ampharete.sp.;C.Garcia 2010;Based on A. balthica, A. acutifrons;0;1;0;0;Ampharete.sp.;Bolam et al. 2014;;0.333333333;Ampharete.sp.;Bolam et al. 2014;;0;0;0;Ampharete;Bolam et al. 2014;0;1;0;0
+Aricidea catherinae;Aricidea;Bolam et al. 2014;;0;1;0;0;Aricidea;Bolam et al. 2014;;0;Aricidea;Bolam et al. 2014;;1;0;0;Aricidea;Bolam et al. 2014;0;1;0;0
+Astarte;Astarte;Bolam et al. 2014;;0;0;1;0;Astarte;Bolam et al. 2014;;1;Astarte;Bolam et al. 2014;;0;0;0;Astarte;Bolam et al. 2014;0;1;0;0
+Astarte elliptica;Astarte;Bolam et al. 2014;;0;0;1;0;Astarte;Bolam et al. 2014;;1;Astarte;Bolam et al. 2014;;0;0;0;Astarte;Bolam et al. 2014;0;1;0;0
+Bryozoan spp. ;Bryozoa;Bolam et al. 2014;;0.5;0.5;0;0;Bryozoa;Bolam et al. 2014;;1;Astarte;Bolam et al. 2014;;0;0;0;Astarte;Bolam et al. 2014;1;0;0;0
+Campanularidae;Campanulariidae;Bolam et al. 2014;;1;0;0;0;Campanulariidae;Bolam et al. 2014;;0.5;Campanulariidae;Bolam et al. 2014;;0;0;0;Campanulariidae;Bolam et al. 2014;1;0;0;0
+Cerebratulus sp.;Cerebratulus;Bolam et al. 2014;;0;0;1;0;Cerebratulus;Bolam et al. 2014;;0;Cerebratulus;Bolam et al. 2014;;0.5;0;0;Cerebratulus;Bolam et al. 2014;0.333333333;0.5;0.166666667;0
+Corophium sp.;Corophium;Bolam et al. 2014;;1;0;0;0;Corophium.volutator;Bolam et al. 2014;;0.25;Corophium.volutator;Bolam et al. 2014;;0.5;0;0;Corophium;Bolam et al. 2014;0.25;0.75;0;0
+Diastylis bradyii;Diastylis;C.Garcia 2010;Based on D. bradyi, D. rathkei, D. rugosa;0.5;0.5;0;0;Diastylis;Bolam et al. 2014;;0.5;Diastylis;Bolam et al. 2014;;0;0;0;Diastylis;Bolam et al. 2014;0.75;0.25;0;0
+Diastylis lucifera;Diastylis;C.Garcia 2010;Based on D. bradyi, D. rathkei, D. rugosa;0.5;0.5;0;0;Diastylis;Bolam et al. 2014;;0.5;Diastylis;Bolam et al. 2014;;0;0;0;Diastylis;Bolam et al. 2014;0.75;0.25;0;0
+Diastylus;Diastylis;C.Garcia 2010;Based on D. bradyi, D. rathkei, D. rugosa;0.5;0.5;0;0;Diastylis;Bolam et al. 2014;;0.5;Diastylis;Bolam et al. 2014;;0;0;0;Diastylis;Bolam et al. 2014;0.75;0.25;0;0
+Diastylus sp.;Diastylis;C.Garcia 2010;Based on D. bradyi, D. rathkei, D. rugosa;0.5;0.5;0;0;Diastylis;Bolam et al. 2014;;0.5;Diastylis;Bolam et al. 2014;;0;0;0;Diastylis;Bolam et al. 2014;0.75;0.25;0;0
+Halicryptus spinulosus;Halicryptus.spinulosus;Törnroos & Bonsdorff 2012;;0;1;0;0;Halicryptus.spinulosus;Törnroos et al. 2015;;0;Halicryptus.spinulosus;Bolam et al. 2014;;1;0;0;Priapulus;Bolam et al. 2014;0;0;0.5;0.5
+Harmothoe;Harmothoe;C.Garcia 2010;;0;0.33;0.66;0;Harmothoe;Bolam et al. 2014;;0;Harmothoe;Bolam et al. 2014;;0;0;0;Harmothoe;Bolam et al. 2014;1;0;0;0
+Harmothoe sarsi;Harmothoe;C.Garcia 2010;;0;0.33;0.66;0;Harmothoe;Bolam et al. 2014;;0;Harmothoe;Bolam et al. 2014;;0;0;0;Harmothoe;Bolam et al. 2014;1;0;0;0
+Harmothoe sp.;Harmothoe;C.Garcia 2010;;0;0.33;0.66;0;Harmothoe;Bolam et al. 2014;;0;Harmothoe;Bolam et al. 2014;;0;0;0;Harmothoe;Bolam et al. 2014;1;0;0;0
+Hydroidolina ;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+Macoma balthica;Macoma.balthica;C.Garcia 2010;;0;0;1;0;Macoma.balthica;Bolam et al. 2014;;0.5;Macoma.balthica;Bolam et al. 2014;;1;0;0;Macoma;Bolam et al. 2014;0;0.5;0.5;0
+Marenzellaria spp. ;Marenzelleria;C.Garcia 2010;Based on M. viridis;0;1;0;0;Marenzelleria;Törnroos et al. 2015, C.Garcia 2010;;0.5;Marenzelleria;Bolam et al. 2014;;0;0;0;Spionidae;Bolam et al. 2014;0;1;0;0
+Monoporeia affinis;Monoporeia.affinis;Törnroos & Bonsdorff 2012;;0;1;0;0;Monoporeia.affinis;Törnroos et al. 2015;;0;Monoporeia.affinis;Bolam et al. 2014;;0.5;0;0;Amphipoda;Bolam et al. 2014;0.5;0.5;0;0
+Mytilus trossulus;Mytilus;C.Garcia 2010;;0;1;0;0;Mytilus;Bolam et al. 2014;;1;Mytilus;Bolam et al. 2014;;0;0;0;Mytilus;Bolam et al. 2014;1;0;0;0
+Nematoda;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+Nemertea spp.;Nemertea;Bolam et al. 2014;;0;0.6;0.4;0;Nemertea;Bolam et al. 2014;;0;Nemertea;Bolam et al. 2014;;0.5;0;0;Nemertea;Bolam et al. 2014;0.333333333;0.5;0.166666667;0
+None;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
+Ostracoda ;Ostracoda;Bolam et al. 2014;;1;0;0;0;Ostracoda;Bolam et al. 2014;;0.333333333;Ostracoda;Bolam et al. 2014;;0;0;0;Ostracoda;Bolam et al. 2014;1;0;0;0
+Phascolion strombus;Phascolion.strombus;Bolam et al. 2014;;0;1;0;0;Phascolion.strombus;Bolam et al. 2014;;0;Phascolion.strombus;Bolam et al. 2014;;0;0;0;Phascolion;Bolam et al. 2014;1;0;0;0
+Polynoidae spp.;Polynoidae;Bolam et al. 2014;;0;0;1;0;Polynoidae;Bolam et al. 2014;;0;Polynoidae;Bolam et al. 2014;;0;0;0;Polynoidae;Bolam et al. 2014;1;0;0;0
+Pontoporeia femorata;Pontoporeia.femorata;Törnroos et al. 2015;;0;1;0;0;Pontoporeia.femorata;Törnroos et al. 2015;;0;Pontoporeia.femorata;Bolam et al. 2014;;0.5;0;0;Amphipoda;Bolam et al. 2014;0.5;0.5;0;0
+Pygospio elegans;Pygospio.elegans;C.Garcia 2010;;1;0;0;0;Pygospio.elegans;Bolam et al. 2014;;0.5;Pygospio.elegans;Bolam et al. 2014;;0;0;0;Pygospio;Bolam et al. 2014;0;0.666666667;0.333333333;0
+Saduria entomon;Saduria.entomon;Bolam et al. 2014;;0;1;0;0;Saduria.entomon;Törnroos et al. 2015;;0;Saduria.entomon;Törnroos & Bonsdorff 2012;Based on Sphaerium;1;0;0;Isopoda;Bolam et al. 2014;1;0;0;0
+Scoloplos armiger;Scoloplos.armiger;C.Garcia 2010;;0;0;1;0;Scoloplos.armiger;Bolam et al. 2014;;0;Scoloplos.armiger;Törnroos et al. 2015;Based on Gammarus;0;0;0;Scoloplos;Bolam et al. 2014;0;0;0.5;0.5
+Spiophanes kroyeri;Spiophanes.kroyeri;Bolam et al. 2014;;0;1;0;0;Spiophanes.kroyeri;Bolam et al. 2014;;0.333333333;Spiophanes.kroyeri;Bolam et al. 2014;;0;0;0;Spiophanes;Bolam et al. 2014;0;1;0;0
+Spiophanes sp. ;Spiophanes;Bolam et al. 2014;Based on Spiophanes kroyeri and bombyx;0;1;0;0;Spiophanes.kroyeri;Bolam et al. 2014;;0.333333333;Spiophanes.kroyeri;Bolam et al. 2014;;0;0;0;Spiophanes;Bolam et al. 2014;0;1;0;0
+Terebellides stroemi;Terebellides.stroemii;C.Garcia 2010;;0;1;0;0;Terebellides.stroemii;Bolam et al. 2014;;0;Terebellides.stroemii;Törnroos & Bonsdorff 2012;Based on Radix (Lymnaea) ;0;0;0;Terebellides;Bolam et al. 2014;1;0;0;0
+Unidentified;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA
