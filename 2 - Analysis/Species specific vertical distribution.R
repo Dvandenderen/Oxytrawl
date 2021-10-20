@@ -8,11 +8,11 @@
   specV <- read.csv(paste(path,"Vertical_biomass_by_species.csv",sep="/"),header=T,sep=",")
 
 # remove unidentified
-  specV <- specV[,-14]
+  specV <- specV[,-c(14,19,20)]
 
 # rename to be consistent  
 nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontoporeia femorata",
-         "Diastylis spp." , "Nematoda","Macoma balthica","Aricidea catherinae", "Harmothoe sarsi" ,
+         "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea catherinae", "Harmothoe sarsi" ,
          "Nereis diveriscolor",  "Terebellides stroemii", "Ostracoda" ,  "Streblospio benedicti")
 
 # make plot
@@ -46,7 +46,7 @@ nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontopo
  
  # rename to be consistent  
  nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontoporeia femorata",
-          "Diastylis spp." , "Nematoda","Macoma balthica","Aricidea catherinae", "Harmothoe sarsi" ,
+          "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea catherinae", "Harmothoe sarsi" ,
           "Nereis diveriscolor",  "Terebellides stroemii", "Ostracoda" ,  "Streblospio benedicti")
  
  # make plot
