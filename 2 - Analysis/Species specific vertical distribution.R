@@ -12,7 +12,7 @@
 
 # rename to be consistent  
 nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontoporeia femorata",
-         "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea catherinae", "Harmothoe sarsi" ,
+         "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea spp.", "Harmothoe sarsi" ,
          "Nereis diveriscolor",  "Terebellides stroemii", "Ostracoda" ,  "Streblospio benedicti")
 
 # make plot
@@ -46,7 +46,7 @@ nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontopo
  
  # rename to be consistent  
  nam <- c("Pygospio elegans",  "Astarte elliptica", "Scoloplos armiger", "Pontoporeia femorata",
-          "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea catherinae", "Harmothoe sarsi" ,
+          "Diastylis spp." , "Nematoda","Limecola balthica","Aricidea spp.", "Harmothoe sarsi" ,
           "Nereis diveriscolor",  "Terebellides stroemii", "Ostracoda" ,  "Streblospio benedicti")
  
  # make plot

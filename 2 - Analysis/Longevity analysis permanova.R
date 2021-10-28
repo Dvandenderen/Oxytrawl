@@ -18,6 +18,10 @@
   traits <- read.csv(paste(path,"Species_traits.csv",sep="/"),header=T,sep=";")
   Box <- cbind(Box, traits[match(Box$Species , traits$Species),c(5:8)])
   
+# check with Astarte having a different longevity
+  Box$l3.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l3.10)
+  Box$l.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l.10)
+  
 # multiply biomass with longevity modality  
   Box$L1_bio <- Box$Biomass..g. * Box$l.1
   Box$L13_bio <- Box$Biomass..g. * Box$l1.2
@@ -46,7 +50,7 @@
   mod1 <- adonis2(Long ~ oxygen + SAR_1317, data = Env2, permutations = 999, method="bray");mod1
   mod2 <- adonis2(Long ~ oxygen, data = Env2, permutations = 999, method="bray");mod2
   mod3 <- adonis2(Long ~ SAR_1317, data = Env2, permutations = 999, method="bray");mod3
-  
+
 # check how it works for subsets
   #Env3 <- subset(Env2, Env2$oxygen > 3.2)
   #Long <- Env3[,c("BC_L1_bio" ,"BC_L13_bio" ,"BC_L310_bio" ,"BC_L10_bio")]
