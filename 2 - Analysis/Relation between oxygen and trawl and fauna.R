@@ -15,7 +15,7 @@
   Env <- read.csv(paste(path,"Env_conditions.csv",sep="/"),header=T,sep=";")
 
 # load Boxcorer data
-  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=";")
+  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=",")
   Box$uniq<- paste(Box$Station, Box$Replicate,sep="_")
 
 # aggregate per station biomass
@@ -73,16 +73,21 @@
 # set colours using RColorBrewer and plot
   pal <- colorRampPalette(c("blue", "red"))
   Env$order  <- findInterval(Env$SAR_1317, sort(Env$SAR_1317))
-
+  
+# convert to abundance/biomass per m2
+  Env$BC_bio <- Env$BC_bio/0.3*1
+  Env$BC_abu <- Env$BC_abu/0.3*1
+  
 # create the plot
   pdf(paste(getwd(),"3 - Outputs/Oxygen_biomass_abundance.pdf",sep="/"),width=7,height=6) 
   par(mar=c(1.5, 4.5, 0.5, 0.5)+0.1,mfrow=c(2,2),mai=c(0.5,0.8,0.2,0.1))
 
   # biomass boxcore
-  plot(Env$BC_bio~Env$oxygen,las=1, ylab=TeX("Biomass (g per 0.3 m^{2})"),xlab="",
-       col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,main="Box core",xlim=c(0,6),xaxt="n")
+  plot(Env$BC_bio~Env$oxygen,las=1, ylab=TeX("Biomass (g ww per m^{2})"),xlab="",
+       col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,main="Box core",xlim=c(0,6),xaxt="n",yaxt="n")
   axis(1,c(0,3,6))
-  text("(a)",x=0.2,y=38)
+  axis(2,c(0,30,60,90,120),las=1)
+  text("(a)",x=0.2,y=125)
 
   m1 <- vglm(BC_bio ~ oxygen, tobit(Lower = 0), data = Env)
   m2 <- vglm(BC_bio ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
@@ -97,7 +102,7 @@
   lines(newdat[,2]~newdat[,1],col="black")
 
   # biomass dredge
-  plot(log10(Env$Dr_bio+1)~Env$oxygen,las=1, ylab="Biomass (g per trawl)",xlab="",
+  plot(log10(Env$Dr_bio+1)~Env$oxygen,las=1, ylab="Biomass (g ww per trawl)",xlab="",
        col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,yaxt="n",main = "Dredge",xlim=c(0,6),xaxt="n")
   axis(1,c(0,3,6))
   axis(2,c(log10(0+1),log10(10+1),log10(100+1),log10(1000+1),log10(10000+1)),
@@ -120,10 +125,11 @@
   lines(newdat[nb+1:nb*2,2]~newdat[nb+1:nb*2,1],col="black",lty=5)
 
   # abundance box core
-  plot(Env$BC_abu~Env$oxygen,las=1, ylab=TeX("Individuals (per 0.3 m^{2})"),xlab="Oxygen (ml/l)",
-       col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,ylim=c(0,400),xlim=c(0,6),xaxt="n")
+  plot(Env$BC_abu~Env$oxygen,las=1, ylab=TeX("Individuals (per m^{2})"),xlab="Oxygen conc. (ml/l)",
+       col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,xlim=c(0,6),xaxt="n",yaxt="n")
   axis(1,c(0,3,6))
-  text("(c)",x=0.2,y=380)
+  axis(2,c(0,300,600,900,1200),las=1)
+  text("(c)",x=0.2,y=1250)
 
   m1 <- vglm(BC_abu ~ oxygen, tobit(Lower = 0), data = Env)
   m2 <- vglm(BC_abu ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
@@ -140,10 +146,10 @@
   newdat[,2][newdat[,2]<0] <- 0
   lines(newdat[1:nb,2]~newdat[1:nb,1],col="black")
   lines(newdat[nb+1:nb*2,2]~newdat[nb+1:nb*2,1],col="black",lty=5)
-  mtext("Oxygen (ml/l)",side=1,line=2,cex=0.8)
+  mtext("Oxygen concentration (ml/l)",side=1,line=2,cex=0.8)
 
 # abundance dredge
-  plot(log10(Env$Dr_abu+1)~Env$oxygen,las=1, ylab="Individuals (per trawl)",xlab="Oxygen (ml/l)",
+  plot(log10(Env$Dr_abu+1)~Env$oxygen,las=1, ylab="Individuals (per trawl)",xlab="Oxygen conc. (ml/l)",
        col=pal(nrow(Env))[Env$order],pch=16,cex=1.3,yaxt="n",xlim=c(0,6),xaxt="n")
   axis(1,c(0,3,6))
   axis(2,c(log10(0+1),log10(10+1),log10(100+1),log10(1000+1),log10(10000+1)),
@@ -166,7 +172,7 @@
   lines(newdat[1:nb,2]~newdat[1:nb,1],col="black")
   lines(newdat[nb+1:nb*2,2]~newdat[nb+1:nb*2,1],col="black",lty=5)
   
-  mtext("Oxygen (ml/l)",side=1,line=2,cex=0.8)
+  mtext("Oxygen concentration (ml/l)",side=1,line=2,cex=0.8)
 
   dev.off()
   

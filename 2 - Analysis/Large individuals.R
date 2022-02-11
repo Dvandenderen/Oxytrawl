@@ -14,7 +14,7 @@
   Env <- read.csv(paste(path,"Env_conditions.csv",sep="/"),header=T,sep=";")
 
 # load BC data
-  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=";")
+  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=",")
   Box$Individual.weight <- as.numeric(as.character(Box$Individual.weight))
 
 # load LxW relationships mm / mg
@@ -38,6 +38,9 @@
   Env <- Env[order(Env$Station),] 
   Env$largeI <- largeI
   
+  # convert to abundance/biomass per m2
+  Env$largeI <- Env$largeI/0.3*1
+
   m1 <- vglm(largeI ~ oxygen, tobit(Lower = 0), data = Env)
   m2 <- vglm(largeI ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
   m3 <- vglm(largeI ~ oxygen*SAR_1317, tobit(Lower = 0), data = Env)
@@ -60,6 +63,9 @@
   Env <- Env[order(Env$Station),] 
   Env$largeI <- largeI
   
+  # convert to abundance/biomass per m2
+  Env$largeI <- Env$largeI/0.3*1
+  
   m1 <- vglm(largeI ~ oxygen, tobit(Lower = 0), data = Env)
   m2 <- vglm(largeI ~ oxygen+SAR_1317, tobit(Lower = 0), data = Env)
   m3 <- vglm(largeI ~ oxygen*SAR_1317, tobit(Lower = 0), data = Env)
@@ -69,10 +75,12 @@
 
 # plot the result for > 15mm
   pdf(paste(getwd(),"3 - Outputs/Large individuals.pdf",sep="/"),width=7,height=3.5) 
-  par(mar=c(1.5, 4.5, 0.5, 0.5)+0.1,mfrow=c(1,2),mai=c(0.8,0.8,0.2,0.1))
-  plot(Env$largeI~Env$oxygen,ylab="nb. of large individuals",xlab="Oxygen (ml/l)",las = 1,pch=16)
+  par(mar=c(1.5, 4.5, 0.5, 0.5)+0.1,mfrow=c(1,2),mai=c(0.8,0.9,0.1,0.1))
+  plot(Env$largeI~Env$oxygen,ylab=TeX("nb. of large individuals per m^{2}"),xlab="Oxygen concentration (ml/l)",
+       las = 1,pch=16,ylim=c(0,75),xlim=c(0,6),yaxt="n",xaxt="n")
   axis(1,c(0,3,6))
-  text("(a)",x=0.9,y=20)
+  axis(2,c(0,25,50,75),las=1)
+  text("(a)",x=0.18,y=70)
   
   oxygen <- seq(0,6,0.01)
   newdat <- data.frame(oxygen)
@@ -80,8 +88,10 @@
   newdat[,2][newdat[,2]<0] <- 0
   lines(newdat[,2]~newdat[,1],col="black")
   
-  plot(Env$largeI~Env$SAR_1317,ylab="",xlab="Fishing intensity (per year)",yaxt="n",pch=16,xaxt="n")
+  plot(Env$largeI~Env$SAR_1317,ylab="",xlab="Trawling intensity (per year)",yaxt="n",pch=16,
+       xaxt="n",yaxt="n",ylim=c(0,75),xlim=c(0,7.5))
   axis(1,c(0,3.5,7))
-  axis(2,c(0,5,10,15,20,25),c("","","","","",""))
-  text("(b)",x=0.2,y=20)
+  axis(2,c(0,25,50,75),c("","","",""))
+  text("(b)",x=0.2,y=70)
   dev.off()
+  

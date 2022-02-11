@@ -20,13 +20,14 @@
   
   for (ii in 1:5){
   # load BC data
-    BC <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=";")
+    BC <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=",")
     BC$uniq<- paste(BC$Station, BC$Replicate,sep="_")
     tt <- subset(BC,(BC$Species == nambent2[ii]))
     Dr_bio <- aggregate(tt$Biomass..g., by=list(tt$Station), FUN=sum,na.rm=T)
     Dr_bio <- cbind(Env, Dr_bio[match(Env$Station,Dr_bio$Group.1 ),c(2)])
     colnames(Dr_bio)[ncol(Dr_bio)]  <- "Bio"
     Dr_bio$Bio[is.na(Dr_bio$Bio)] <- 0
+    Dr_bio$Bio <- Dr_bio$Bio/0.3
 
     yy <- max(log10(Dr_bio$Bio+1))
     plot(log10(Dr_bio$Bio+1)~Dr_bio$SAR_1317,
@@ -50,7 +51,7 @@
     Dr_bio <- cbind(Env, Dr_bio[match(Env$Station,Dr_bio$Group.1 ),c(2)])
     colnames(Dr_bio)[ncol(Dr_bio)]  <- "Bio"
     Dr_bio$Bio[is.na(Dr_bio$Bio)] <- 0
-    
+
     yy <- max(log10(Dr_bio$Bio+1))
     plot(log10(Dr_bio$Bio+1)~Dr_bio$SAR_1317,
          las=1,xlab="Fishing intensity",ylab="log10(Biomass+1)",xaxt="n",yaxt="n", ylim = c(0,ceiling(yy)))
@@ -69,17 +70,18 @@
 
   nambent <- c("Scoloplos armiger")
   # load BC data
-  BC <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=";")
+  BC <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=",")
   BC$uniq<- paste(BC$Station, BC$Replicate,sep="_")
   tt <- subset(BC,(BC$Species == nambent[1]))
   BC_bio <- aggregate(tt$Biomass..g., by=list(tt$Station), FUN=sum,na.rm=T)
   BC_bio <- cbind(Env, BC_bio[match(Env$Station,BC_bio$Group.1 ),c(2)])
   colnames(BC_bio)[ncol(BC_bio)]  <- "Bio"
   BC_bio$Bio[is.na(BC_bio$Bio)] <- 0
+  BC_bio$Bio <- BC_bio$Bio/0.3
   
   yy <- max(log10(BC_bio$Bio+1))
   plot(log10(BC_bio$Bio+1)~BC_bio$SAR_1317,
-       las=1,xlab="Fishing intensity",ylab="log10(Biomass+1)",xaxt="n",yaxt="n", ylim = c(0,ceiling_dec(yy,1)))
+       las=1,xlab="Trawling intensity",ylab="log10(Biomass+1)",xaxt="n",yaxt="n", ylim = c(0,ceiling_dec(yy,1)))
   axis(1,c(0,3.5,7),cex=1.5)
   axis(2,c(0,ceiling_dec(yy,1)/2,ceiling_dec(yy,1)),las=1,cex=1.5)
   
@@ -90,7 +92,7 @@
   sar <- c(0,7)
   yend <- cf[1]+cf[2]*sar
   lines(yend~sar, lty = linetype)
-  mtext("Fishing intensity (per year)",side=1,line=2,cex = 0.8)
+  mtext("Trawling intensity (per year)",side=1,line=2,cex = 0.8)
   
   plot.new()
   

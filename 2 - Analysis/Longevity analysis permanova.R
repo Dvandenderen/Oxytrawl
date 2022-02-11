@@ -12,15 +12,15 @@
   Env <- read.csv(paste(path,"Env_conditions.csv",sep="/"),header=T,sep=";")
 
 # load BC data
-  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=";")
+  Box <- read.csv(paste(path,"BC_biomass.csv",sep="/"),header=T,sep=",")
   
 # longevity  
   traits <- read.csv(paste(path,"Species_traits.csv",sep="/"),header=T,sep=";")
   Box <- cbind(Box, traits[match(Box$Species , traits$Species),c(5:8)])
   
 # check with Astarte having a different longevity
-  Box$l3.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l3.10)
-  Box$l.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l.10)
+#  Box$l3.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l3.10)
+#  Box$l.10 <- ifelse(Box$Species == "Astarte elliptica",0.5,Box$l.10)
   
 # multiply biomass with longevity modality  
   Box$L1_bio <- Box$Biomass..g. * Box$l.1
@@ -44,7 +44,7 @@
   Env$Biomass <- rowSums(Env[,c("BC_L1_bio" ,"BC_L13_bio" ,"BC_L310_bio" ,"BC_L10_bio")])
   Env[,c(12:15)] <- Env[,c(12:15)]/Env$Biomass
   Env2 <- subset(Env, Env$Biomass > 0)
-  Long <- Env2[,c("BC_L1_bio" ,"BC_L13_bio" ,"BC_L310_bio" ,"BC_L10_bio")]
+  Long <- Env2[,c("BC_L1_bio" ,"BC_L13_bio" ,"BC_L310_bio")]
 
 #permanova  
   mod1 <- adonis2(Long ~ oxygen + SAR_1317, data = Env2, permutations = 999, method="bray");mod1
