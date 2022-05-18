@@ -8,7 +8,7 @@
   library(tidyr)
 
 # path name 
-  path <- paste(getwd(),"1 - Data inputs",sep="/")
+  path <- "C:/Users/danie/Documents/Online for git/Oxytrawl/1 - Data inputs"
 
 # load environmental data
   Env <- read.csv(paste(path,"Env_conditions.csv",sep="/"),header=T,sep=";")
